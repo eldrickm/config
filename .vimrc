@@ -3,10 +3,12 @@
 " Created 09/28/16 in Room 304, Phi Kappa Psi
 
 syntax on                   " Syntax Highlighting
-
 filetype plugin indent on   " Indent Specificity
+set mouse=a                 " Mouse Support
 
 " Tab Settings
+set autoindent
+set smartindent
 set tabstop=4			    " Number of visual spaces per tab
 set softtabstop=4		    " Number of spaces in tab when editing
 set expandtab			    " Tabs become spaces
