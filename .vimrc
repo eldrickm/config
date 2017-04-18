@@ -6,6 +6,9 @@ syntax on                   " Syntax Highlighting
 filetype plugin indent on   " Indent Specificity
 set mouse=a                 " Mouse Support
 
+colorscheme elflord
+set background=dark
+
 " Tab Settings
 set autoindent
 set smartindent
