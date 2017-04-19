@@ -19,6 +19,7 @@ Plugin 'vim-syntastic/syntastic'
 " Interface
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'morhetz/gruvbox'
 
 
 " OSX stupid backspace fix
@@ -39,8 +40,7 @@ syntax on                   " Syntax Highlighting
 filetype plugin indent on   " Indent Specificity
 set mouse=a                 " Mouse Support
 
-colorscheme elflord
-set background=dark
+colorscheme gruvbox
 
 " Tab Settings
 set autoindent
@@ -90,7 +90,7 @@ map <C-n> :NERDTreeToggle<CR>
 "Vim-Airline Configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1 
-let g:airline_theme='powerlineish'
+let g:airline_theme='bubblegum'
 let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 1
 
