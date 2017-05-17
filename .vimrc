@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'   " let Vundle manage Vundle, required
 
 " Utility
 Plugin 'scrooloose/nerdtree'
-Plugin 'vim-syntastic/syntastic'
+"Plugin 'vim-syntastic/syntastic'
 
 " Interface
 Plugin 'vim-airline/vim-airline'
@@ -45,8 +45,10 @@ colorscheme gruvbox
 " Tab Settings
 set autoindent
 set smartindent
-set tabstop=4			    " Number of visual spaces per tab
-set softtabstop=4		    " Number of spaces in tab when editing
+set cindent
+set tabstop=2			    " Number of visual spaces per tab
+set softtabstop=2		  " Number of spaces in tab when editing
+set shiftwidth=0
 set expandtab			    " Tabs become spaces
 
 " Absolute/Relative Line Number
@@ -95,9 +97,10 @@ let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 1
 
 " Syntastic Configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_c_remove_include_errors = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
