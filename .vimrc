@@ -14,7 +14,7 @@ Plugin 'VundleVim/Vundle.vim'   " let Vundle manage Vundle, required
 
 " Utility
 Plugin 'scrooloose/nerdtree'
-"Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-syntastic/syntastic'
 
 " Interface
 Plugin 'vim-airline/vim-airline'
@@ -41,6 +41,7 @@ filetype plugin indent on   " Indent Specificity
 set mouse=a                 " Mouse Support
 
 colorscheme gruvbox
+set background=dark
 
 " Tab Settings
 set autoindent
@@ -67,6 +68,9 @@ set foldenable
 set foldlevelstart=10
 set foldnestmax=10
 set foldmethod=indent
+
+set wrap
+set linebreak
 
 " Key remaps
 
@@ -104,3 +108,6 @@ let g:hybrid_reduced_contrast = 1
 "let g:syntastic_always_populate_loc_list = 1
 "let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_open = 1
+
+" Terminal colors for Guake :)
+set t_Co=256
