@@ -7,8 +7,11 @@ sudo apt-get install git
 # Install Vundle
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-# Copy /config/vimrc to ~/
+# Copy /config/.vimrc to ~/
 cp .vimrc ~/.vimrc
+
+# Copy /config/.bashrc to ~/
+cp .bashrc ~/.bashrc
 
 # Install Vundle Plugins
 vim +PluginInstall +qall
@@ -22,6 +25,3 @@ fc-cache -vf ~/.local/share/fonts/
 mkdir ~/.config/fontconfig/
 mkdir ~/.config/fontconfig/conf.d/
 mv 10-powerline-symbols.conf ~/.config/fontconfig/conf.d/
-
-# Install LSD
-

@@ -104,11 +104,11 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    #PS1='[\W]>>\[$(tput sgr0)\]'
-    PS1="[\t] [\W] \`parse_git_branch\` (\[\e[32;1m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files, \$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\e[30;1m\]) >> \[\e[0m\]"
+    case "$OSTYPE" in 
+      darwin*) PS1="[\t] [\W] \`parse_git_branch\` (\[\e[32;1m\]\$(/bin/ls -1 | /usr/bin/wc -l | /usr/bin/sed 's: ::g') files, \$(/bin/ls -lah | /usr/bin/grep -m 1 total | /usr/bin/sed 's/total //')b\[\e[30;1m\]) >> \[\e[0m\]" ;;
+      *) PS1="[\t] [\W] \`parse_git_branch\` (\[\e[32;1m\]\$(/bin/ls -1 | /usr/bin/wc -l | /bin/sed 's: ::g') files, \$(/bin/ls -lah | /bin/grep -m 1 total | /bin/sed 's/total //')b\[\e[30;1m\]) >> \[\e[0m\]" ;;
+    esac
 else
-    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
     PS1='[\W]>>\[$(tput sgr0)\]'
 fi
 unset color_prompt force_color_prompt
