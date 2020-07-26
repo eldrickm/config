@@ -6,7 +6,7 @@
 " ========================================================================================
 
 
-" Vundle Plugins =========================================================================
+" = Vundle Plugins ========================================================================
 "
 " ----------------------------------------------------------------------------------------
 ":PluginList       - lists configured plugins
@@ -29,6 +29,10 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'              " file tree
 Plugin 'preservim/nerdcommenter'          " easy commenting
 Plugin 'ctrlpvim/ctrlp.vim'               " file finding
+Plugin 'mhinz/vim-signify'                " git diff sign tags
+Plugin 'dense-analysis/ale'               " linter
+Plugin 'valloric/youcompleteme'           " auto complete
+
 
 " Interface Plugins
 Plugin 'vim-airline/vim-airline'          " nicer status line
@@ -40,10 +44,11 @@ Plugin 'vhda/verilog_systemverilog.vim'   " verilog and system verilog highlight
 
 call vundle#end()                         " plugins must be added before this line
 
-" End Vundle Plugins =====================================================================
+" ========================================================================================
 
 
-" Editor Settings ========================================================================
+" = Editor Settings =======================================================================
+
 syntax on                   " syntax highlighting
 filetype plugin indent on   " indent specificity
 
@@ -94,10 +99,12 @@ set backspace=indent,eol,start
 " runtime settings
 runtime macros/matchit.vim
 
-" End Editor Settings ====================================================================
+" ========================================================================================
 
 
-" Remaps =================================================================================
+" = Remaps ===============================================================================
+
+" map spacebar as leader key
 let mapleader = " "
 
 " move visually by line, made a bit redundant with `set nowrap`
@@ -107,17 +114,21 @@ nnoremap k gk
 " jk remapped to ESC for fast exit
 inoremap jk <ESC>
 
-" Turn off highlights in search
+" turn off highlights in search
 nnoremap <leader><space> :nohlsearch<CR> 
 
-" Space open/closes folds
+" toggle folds
 nnoremap <Bslash> za
 
-" NerdTree
+" open NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
-" NerdCommenter
-" " Add spaces after comment delimiters by default
+" ========================================================================================
+
+" = Plugin Settings ======================================================================
+
+" NERDCommenter
+" Add spaces after comment delimiters by default
 let g:NERDSpaceDelims = 1
 " Use compact syntax for prettified multi-line comments
 let g:NERDCompactSexyComs = 1
@@ -130,10 +141,14 @@ let g:NERDTrimTrailingWhitespace = 1
 " Enable NERDCommenterToggle to check all selected lines is commented or not
 let g:NERDToggleCheckAllLines = 1
 
-"Vim-Airline Configuration
+" Vim-Airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1 
-let g:airline_theme='bubblegum'
+let g:airline_theme='gruvbox'
 let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 1
 
+" ALE
+let g:ale_verilog_xvlog_executable = '/home/redleader/Xilinx/Vivado/2019.2/bin/xvlog'
+
+" ========================================================================================
