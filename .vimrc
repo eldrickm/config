@@ -32,12 +32,13 @@ Plugin 'ctrlpvim/ctrlp.vim'               " file finding
 Plugin 'mhinz/vim-signify'                " git diff sign tags
 Plugin 'dense-analysis/ale'               " linter
 Plugin 'valloric/youcompleteme'           " auto complete
-
+Plugin 'Chiel92/vim-autoformat'           " auto formatter
 
 " Interface Plugins
 Plugin 'vim-airline/vim-airline'          " nicer status line
 Plugin 'vim-airline/vim-airline-themes'   " themes for the status line
 Plugin 'morhetz/gruvbox'                  " undefeated color scheme
+Plugin 'nathanaelkane/vim-indent-guides'  " visual display of indent levels
 
 " Language Plugins
 Plugin 'vhda/verilog_systemverilog.vim'   " verilog and system verilog highlighting
@@ -115,7 +116,10 @@ nnoremap k gk
 inoremap jk <ESC>
 
 " turn off highlights in search
-nnoremap <leader><space> :nohlsearch<CR> 
+nnoremap <leader><space> :nohlsearch<CR>
+
+" remove trailing backspaces
+nnoremap <leader><backspace> :RemoveTrailingSpaces<CR>
 
 " toggle folds
 nnoremap <Bslash> za
@@ -143,12 +147,17 @@ let g:NERDToggleCheckAllLines = 1
 
 " Vim-Airline
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1 
+let g:airline_powerline_fonts = 1
 let g:airline_theme='gruvbox'
 let g:hybrid_custom_term_colors = 1
 let g:hybrid_reduced_contrast = 1
 
 " ALE
 let g:ale_verilog_xvlog_executable = '/home/redleader/Xilinx/Vivado/2019.2/bin/xvlog'
+
+"indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_guide_size = 1
 
 " ========================================================================================
