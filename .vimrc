@@ -6,7 +6,7 @@
 " ========================================================================================
 
 
-" = Vundle Plugins ========================================================================
+" = Vundle Plugins =======================================================================
 "
 " ----------------------------------------------------------------------------------------
 ":PluginList       - lists configured plugins
@@ -33,6 +33,7 @@ Plugin 'mhinz/vim-signify'                " git diff sign tags
 Plugin 'dense-analysis/ale'               " linter
 Plugin 'valloric/youcompleteme'           " auto complete
 Plugin 'Chiel92/vim-autoformat'           " auto formatter
+Plugin 'jremmen/vim-ripgrep'              " ripgrep integration
 
 " Interface Plugins
 Plugin 'vim-airline/vim-airline'          " nicer status line
@@ -48,7 +49,7 @@ call vundle#end()                         " plugins must be added before this li
 " ========================================================================================
 
 
-" = Editor Settings =======================================================================
+" = Editor Settings ======================================================================
 
 syntax on                   " syntax highlighting
 filetype plugin indent on   " indent specificity
@@ -63,12 +64,11 @@ set undofile
 set laststatus=2            " always display status line
 
 " Tab Settings
+set expandtab			    " tabs become spaces
+set tabstop=4			    " number of visual spaces per tab
+set softtabstop=4		    " number of spaces in tab when editing
+set shiftwidth=4
 set autoindent
-set cindent
-set tabstop=2			          " number of visual spaces per tab
-set softtabstop=2		        " number of spaces in tab when editing
-set shiftwidth=0
-set expandtab			          " tabs become spaces
 
 " Line Number Settings
 set number                  " absolute line numbers
@@ -127,9 +127,29 @@ nnoremap <Bslash> za
 " open NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
+" window movement between panes
+nnoremap <leader>h :wincmd h<CR>
+nnoremap <leader>j :wincmd j<CR>
+nnoremap <leader>k :wincmd k<CR>
+nnoremap <leader>l :wincmd l<CR>
+
+" YCM
+nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
+nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
+nnoremap <buffer> <silent> <leader>rr :YcmCompleter RefactorRename<CR>
+
+" ripgrep project search
+nnoremap <leader>ps :Rg<SPACE>
+
+" autoformat current verilog file - requires verilog-format to be installed
+nnoremap <leader>fv :!verilog-format -f '%:p'<CR>
+
 " ========================================================================================
 
 " = Plugin Settings ======================================================================
+
+" gruvbox
+let g:gruvbox_invert_selection = '0'
 
 " NERDCommenter
 " Add spaces after comment delimiters by default
@@ -155,7 +175,10 @@ let g:hybrid_reduced_contrast = 1
 " ALE
 let g:ale_verilog_xvlog_executable = '/home/redleader/Xilinx/Vivado/2019.2/bin/xvlog'
 
-"indent-guides
+" CTRL+P
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
+
+" indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 let g:indent_guides_start_level = 2
 let g:indent_guides_guide_size = 1
