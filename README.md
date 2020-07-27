@@ -67,7 +67,7 @@ Install the following tools for a better experience if applicable
 
 ## Project TODO
 
-[ ] Switch over to CoC for vim auto-completion (?)
-[ ] Add Workman layout remaps to .vimrc
-[ ] Add vim-surround to plugins
-[ ] Switch to Plug for vim plugin manager
+- [ ] Switch over to CoC for vim auto-completion (?)
+- [ ] Add Workman layout remaps to .vimrc
+- [ ] Add vim-surround to plugins
+- [ ] Switch to Plug for vim plugin manage
