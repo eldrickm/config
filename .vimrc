@@ -62,6 +62,7 @@ set nobackup
 set undodir=~/.vim/undodir  " use undofiles instead
 set undofile
 set laststatus=2            " always display status line
+set colorcolumn=80          " highlight 80 character line width
 
 " Tab Settings
 set expandtab			    " tabs become spaces
@@ -133,6 +134,11 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
+" buffer manipulation
+nnoremap <Tab>      :bnext<CR>
+nnoremap <S-Tab>    :bprevious<CR>
+nnoremap <leader>bd :bp\|bd #<CR>
+
 " YCM
 nnoremap <buffer> <silent> <leader>gd :YcmCompleter GoTo<CR>
 nnoremap <buffer> <silent> <leader>gr :YcmCompleter GoToReferences<CR>
@@ -143,6 +149,10 @@ nnoremap <leader>ps :Rg<SPACE>
 
 " autoformat current verilog file - requires verilog-format to be installed
 nnoremap <leader>fv :!verilog-format -f '%:p'<CR>
+
+"ALE
+nnoremap <leader>e :ALENextWrap<CR>
+nnoremap <leader>E :ALEPreviousWrap<CR>
 
 " ========================================================================================
 
@@ -174,6 +184,7 @@ let g:hybrid_reduced_contrast = 1
 
 " ALE
 let g:ale_verilog_xvlog_executable = '/home/redleader/Xilinx/Vivado/2019.2/bin/xvlog'
+let g:ale_python_flake8_options = '--ignore=E501'
 
 " CTRL+P
 let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
