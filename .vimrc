@@ -134,6 +134,12 @@ nnoremap <leader>j :wincmd j<CR>
 nnoremap <leader>k :wincmd k<CR>
 nnoremap <leader>l :wincmd l<CR>
 
+" window movement between panes - workman home row
+nnoremap <leader>y :wincmd h<CR>
+nnoremap <leader>n :wincmd j<CR>
+nnoremap <leader>e :wincmd k<CR>
+nnoremap <leader>o :wincmd l<CR>
+
 " buffer manipulation
 nnoremap <Tab>      :bnext<CR>
 nnoremap <S-Tab>    :bprevious<CR>
@@ -151,8 +157,8 @@ nnoremap <leader>ps :Rg<SPACE>
 nnoremap <leader>fv :!verilog-format -f '%:p'<CR>
 
 "ALE
-nnoremap <leader>e :ALENextWrap<CR>
-nnoremap <leader>E :ALEPreviousWrap<CR>
+nnoremap <leader>w :ALENextWrap<CR>
+nnoremap <leader>W :ALEPreviousWrap<CR>
 
 " ========================================================================================
 
