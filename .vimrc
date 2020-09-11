@@ -71,8 +71,9 @@ set softtabstop=4		    " number of spaces in tab when editing
 set shiftwidth=4
 set autoindent
 
-" Line Number Settings
+" Line Number Settings - hybrid line numbers
 set number                  " absolute line numbers
+set relativenumber          " relative line numbers
 
 " Graphical Settings
 colorscheme gruvbox
