@@ -29,6 +29,12 @@ cd ~/.vim/bundle/youcompleteme
 python3 install.py
 echo ""
 
+# Install powerline fonts
+echo ">> Installing powerline fonts"
+echo ""
+sudo apt-get install fonts-powerline
+echo ""
+
 # Install zsh
 echo ">> Installing zsh"
 echo ""
