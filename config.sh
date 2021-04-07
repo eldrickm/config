@@ -73,3 +73,9 @@ echo ">> Installing tmux"
 echo ""
 sudo apt install tmux
 echo ""
+
+# Overwrite tmux_conf
+echo ">> Overwriting tmux_conf"
+echo ""
+cp .tmux.conf ~/.tmux.conf
+echo ""
