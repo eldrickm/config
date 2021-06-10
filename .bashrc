@@ -176,3 +176,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+alias pingme="curl --header \"Content-Type: application/json\" --request POST --data '{\"value1\":\"Script complete\"}' https://maker.ifttt.com/trigger/alert/with/key/drZiKZIZXBD4b8tR--cHPD; echo"
